@@ -15,13 +15,16 @@ refs.input.addEventListener('input', debounce(onEnter, DEBOUNCE_DELAY));
 
 function onEnter(event) {
   event.preventDefault();
+
   const searchQuery = event.target.value.trim();
+
   console.log(searchQuery);
   if (searchQuery === '') {
     clear();
-    clearCountry()
+    clearCountry();
     return;
   }
+
   fetchCountries(searchQuery)
     .then(data => {
       console.log(data);
@@ -61,7 +64,7 @@ function renderCountry(country) {
 }
 function allFindedCountries(country) {
   const markUpCoutries = `<li class = "country_item"><img src=${country.flags.svg} class="country__img" alt=${country.name} /><h2>${country.name}</h2></li>`;
-  refs.list.insertAdjacentHTML('beforeEnd', markUpCoutries);
+  refs.list.innerHTML += markUpCoutries;
 }
 function clear() {
   refs.list.innerHTML = '';
