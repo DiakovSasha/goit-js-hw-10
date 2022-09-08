@@ -54,16 +54,12 @@ function onEnter(event) {
 
 function renderCountry(country) {
   const languagesEl = country.languages.map(language => language.name).join();
-  const markUp = `<div class="wrapper">
-  <div class="pic">
+  const markUp = `<hr><div class="wrapper">
     <img
       src="${country.flags.svg}"
       class="country__img"
       alt="${country.name}"
     />
-    
-  </div>
-
   <div class="inner">
   <h1 class="country__title">${country.name}</h1>
     <p>Capital: <span class="country__span">${country.capital}</span></p>
@@ -76,7 +72,7 @@ function renderCountry(country) {
   refs.info.innerHTML = markUp;
 }
 function allFindedCountries(country) {
-  const markUpCoutries = `<li class = "country_item"><img src=${country.flags.svg} class='country__img--min' alt=${country.name} /><h2>${country.name}</h2></li>`;
+  const markUpCoutries = `<hr><li class = "country_item"><img src=${country.flags.svg} class='country__img--min' alt=${country.name} /><h2>${country.name}</h2></li>`;
   refs.list.innerHTML += markUpCoutries;
 }
 function clear() {
