@@ -32,7 +32,6 @@ body {
 .wrapper {
   display: flex;
   align-items: center;
-  
 }
 
 .country__title {
@@ -42,6 +41,7 @@ body {
   width: 200px;
   height: 130px;
   margin-right: 20px;
+  margin-left: 20px;
 }
 
 .country__img--min {
