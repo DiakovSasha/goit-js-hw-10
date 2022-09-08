@@ -67,7 +67,7 @@ function renderCountry(country) {
   <div class="inner">
   <h1 class="country__title">${country.name}</h1>
     <p>Capital: <span class="country__span">${country.capital}</span></p>
-    <p>Popultaion: <span class="country__span"> ${country.population}</span></p>
+    <p>Population: <span class="country__span"> ${country.population}</span></p>
     <p>Languages: <span class="country__span"> ${languagesEl}</span></p>
   </div>
 </div>
