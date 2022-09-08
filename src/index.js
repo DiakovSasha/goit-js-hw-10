@@ -54,16 +54,29 @@ function onEnter(event) {
 
 function renderCountry(country) {
   const languagesEl = country.languages.map(language => language.name).join();
-  const markUp = `<img src=${country.flags.svg} class="country__img" alt=${country.name} />
-   <h1>${country.name}</h1>
-   <p> Capital: <span class='country__span'>${country.capital}</span></p>
-   <p> Popultaion: <span class='country__span'> ${country.population}</span></p>
-   <p> Languege: <span class='country__span'> ${languagesEl}</span></p>`;
+  const markUp = `<div class="wrapper">
+  <div class="pic">
+    <img
+      src="${country.flags.svg}"
+      class="country__img"
+      alt="${country.name}"
+    />
+    
+  </div>
+
+  <div class="inner">
+  <h1 class="country__title">${country.name}</h1>
+    <p>Capital: <span class="country__span">${country.capital}</span></p>
+    <p>Popultaion: <span class="country__span"> ${country.population}</span></p>
+    <p>Languages: <span class="country__span"> ${languagesEl}</span></p>
+  </div>
+</div>
+;`;
 
   refs.info.innerHTML = markUp;
 }
 function allFindedCountries(country) {
-  const markUpCoutries = `<li class = "country_item"><img src=${country.flags.svg} class="country__img" alt=${country.name} /><h2>${country.name}</h2></li>`;
+  const markUpCoutries = `<li class = "country_item"><img src=${country.flags.svg} class='country__img--min' alt=${country.name} /><h2>${country.name}</h2></li>`;
   refs.list.innerHTML += markUpCoutries;
 }
 function clear() {

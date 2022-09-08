@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   list-style: none;
+  margin: 0;
 }
 
 body {
@@ -15,12 +16,34 @@ body {
 
 #search-box {
   font: inherit;
-  padding: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
   max-width: 320px;
   margin-bottom: 16px;
+  margin-left: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.wrapper {
+  display: flex;
+}
+.pic {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.country__title {
+  font-size: 30px;
+}
+.country__img {
+  width: 200px;
+  height: 130px;
 }
 
-.country__img {
+.country__img--min {
   width: 50px;
   height: 30px;
   margin-right: 10px;
@@ -28,8 +51,10 @@ body {
 .country__span {
   font-size: 20px;
   font-weight: bold;
+  line-height: 1.2;
 }
 .country_item {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
