@@ -41,14 +41,15 @@ function onEnter(event) {
         data.map(renderCountry);
         return;
       }
-
       if (data.length >= 2 && data.length <= 10) {
         clearCountry();
         data.map(allFindedCountries);
       }
     })
     .catch(error => {
-      Notiflix.Notify.failure('Oops, there is no country with that name');
+      clear();
+      clearCountry();
+      Notiflix.Notify.failure(error);
     });
 }
 
@@ -68,16 +69,17 @@ function renderCountry(country) {
   </div>
 </div>
 ;`;
-
   refs.info.innerHTML = markUp;
 }
 function allFindedCountries(country) {
   const markUpCoutries = `<li class = "country_item"><img src=${country.flags.svg} class='country__img--min' alt=${country.name} /><h2>${country.name}</h2></li>`;
   refs.list.innerHTML += markUpCoutries;
 }
+
 function clear() {
   refs.list.innerHTML = '';
 }
+
 function clearCountry() {
   refs.info.innerHTML = '';
 }
