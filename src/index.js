@@ -49,7 +49,7 @@ function onEnter(event) {
     .catch(error => {
       clear();
       clearCountry();
-      Notiflix.Notify.failure(error);
+      Notiflix.Notify.failure('Oops, there is no country with that name');
     });
 }
 
